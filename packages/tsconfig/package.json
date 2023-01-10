@@ -1,0 +1,14 @@
+{
+  "name": "@whoshiring/tsconfig",
+  "version": "0.0.0",
+  "private": true,
+  "keywords": [
+    "tsconfig",
+    "typescript"
+  ],
+  "author": "George Bockari <bitwhys@cr8iv.io>",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
+}

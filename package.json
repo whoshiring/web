@@ -1,19 +1,24 @@
 {
   "private": true,
   "scripts": {
-    "dev": "pnpm build:ui && pnpm -F @whoshiring/site dev",
-    "start": "pnpm -F @whoshiring/site start",
-    "build": "pnpm build:ui && pnpm -F @whoshiring/site build",
-    "build:ui": "pnpm -F @whoshiring/ui build",
-    "prepare": "pnpm -F @whoshiring/ui build:types",
-    "commit": "cz"
+    "build": "turbo run build",
+    "commit": "cz",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
-    "cz-conventional-changelog": "3.3.0"
+    "cz-conventional-changelog": "3.3.0",
+    "turbo": "^1.6.3"
   },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
-  }
+  },
+  "dependencies": {
+    "eslint": "^8.31.0",
+    "prettier": "^2.8.2",
+    "typescript": "^4.9.4",
+    "eslint-config-whoshiring": "workspace:*"
+  },
+  "packageManager": "pnpm@7.22.0"
 }
