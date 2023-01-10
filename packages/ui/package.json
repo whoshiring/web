@@ -14,9 +14,12 @@
     }
   },
   "scripts": {
+    "dev": "pnpm watch:types & pnpm watch:js",
     "type-check": "tsc --noEmit",
     "type-check:watch": "pnpm type-check -- --watch",
     "build:types": "tsc",
+    "watch:js": "rollup -c --watch",
+    "watch:types": "tsc --watch",
     "build:js": "rollup -c",
     "build": "pnpm build:types && pnpm build:js",
     "lint": "eslint src/**"

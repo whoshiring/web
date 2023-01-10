@@ -3,6 +3,8 @@
   "display": "React Library",
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "useDefineForClassFields": true,
     "jsx": "react-jsx",
     "lib": ["DOM", "ESNext", "DOM.Iterable"],
     "module": "ESNext",

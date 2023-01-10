@@ -1,0 +1,11 @@
+{
+  "extends": "@whoshiring/tsconfig/tsconfig.react-library.json",
+  "compilerOptions": {
+    "target": "ESNext",
+    "allowSyntheticDefaultImports": true,
+    "allowJs": false,
+    "noEmit": true
+  },
+  "include": ["src"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}

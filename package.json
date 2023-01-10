@@ -1,6 +1,7 @@
 {
   "private": true,
   "scripts": {
+    "dev": "turbo run dev --no-cache --parallel --continue",
     "build": "turbo run build",
     "commit": "cz",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""

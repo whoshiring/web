@@ -1,20 +1,7 @@
 module.exports = {
-  parser: '@typescript-eslint/parser',
-  extends: [
-    'turbo',
-    'eslint:recommended',
-    'plugin:react/recommended',
-    'plugin:react-hooks/recommended',
-    'plugin:@typescript-eslint/eslint-recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:prettier/recommended',
-  ],
-  settings: {
-    react: {
-      version: 'detect',
-    },
-  },
+  extends: ['next', 'turbo', 'prettier'],
   rules: {
-    'react/prop-types': 0,
+    '@next/next/no-html-link-for-pages': 'off',
+    'react/jsx-key': 'off',
   },
 }
