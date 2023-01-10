@@ -5,6 +5,15 @@
     "start": "pnpm -F @whoshiring/site start",
     "build": "pnpm build:ui && pnpm -F @whoshiring/site build",
     "build:ui": "pnpm -F @whoshiring/ui build",
-    "prepare": "pnpm -F @whoshiring/ui build:types"
+    "prepare": "pnpm -F @whoshiring/ui build:types",
+    "commit": "cz"
+  },
+  "devDependencies": {
+    "cz-conventional-changelog": "3.3.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }

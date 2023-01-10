@@ -12,7 +12,7 @@ const styles = {
 const App = () => (
   <div css={styles.container({ hasBackground: false })}>
     <div tw="flex flex-col justify-center h-full gap-y-5">
-      <Button variant="primary">Testing 123</Button>
+      <Button variant="primary">Still Works</Button>
       <Button variant="secondary">Cancel</Button>
       <Button isSmall>Close</Button>
     </div>
