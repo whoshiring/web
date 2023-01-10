@@ -1,0 +1,10 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "pnpm build:ui && pnpm -F @whoshiring/site dev",
+    "start": "pnpm -F @whoshiring/site start",
+    "build": "pnpm build:ui && pnpm -F @whoshiring/site build",
+    "build:ui": "pnpm -F @whoshiring/ui build",
+    "prepare": "pnpm -F @whoshiring/ui build:types"
+  }
+}
