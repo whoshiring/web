@@ -1,4 +1,4 @@
-import { Button } from "ui";
+import { Button } from "@entry/ui";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -12,7 +12,7 @@ export default {
   tags: ["autodocs"],
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
-    backgroundColor: { control: "color" },
+    // backgroundColor: { control: "color" },
   },
 };
 
@@ -20,26 +20,27 @@ export default {
 export const Primary = {
   args: {
     primary: true,
-    label: "Button",
+    children: "Button",
   },
 };
 
 export const Secondary = {
   args: {
-    label: "Button",
+    children: "Button",
+    variant: "secondary",
   },
 };
 
 export const Large = {
   args: {
     size: "large",
-    label: "Button",
+    children: "Button",
   },
 };
 
 export const Small = {
   args: {
     size: "small",
-    label: "Button",
+    children: "Button",
   },
 };

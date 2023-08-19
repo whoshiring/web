@@ -1,10 +1,10 @@
-import { Button, Header } from "ui";
+import { Button, Header } from "@entry/ui";
 
 export default function Page() {
   return (
     <>
       <Header text="Web" />
-      <Button />
+      <Button variant="ghost">Health Matters</Button>
     </>
   );
 }

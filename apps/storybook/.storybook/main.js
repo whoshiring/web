@@ -24,5 +24,17 @@ const config = {
   docs: {
     autodocs: "tag",
   },
+  viteFinal: (config) => {
+    return {
+      ...config,
+      resolve: {
+        alias: {
+          ...config.resolve.alias,
+          "@/components": "../../packages/ui/components",
+          "@/lib": "../../packages/ui/lib",
+        },
+      },
+    };
+  },
 };
 export default config;
