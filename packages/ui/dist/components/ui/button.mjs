@@ -1,2 +1,2 @@
-export { b as Button, a as buttonVariants } from '../../chunk-RZFEBEXU.mjs';
+export { b as Button, a as buttonVariants } from '../../chunk-MZEKKKC7.mjs';
 import '../../chunk-ORMGP54N.mjs';
