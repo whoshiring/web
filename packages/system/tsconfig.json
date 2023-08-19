@@ -1,5 +1,8 @@
 {
   "extends": "tsconfig/react-library.json",
   "include": ["."],
+  "compilerOptions": {
+    "target": "ES2019"
+  },
   "exclude": ["dist", "build", "node_modules"]
 }
