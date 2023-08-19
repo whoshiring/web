@@ -162,10 +162,32 @@ importers:
         specifier: ^4.5.3
         version: 4.9.5
 
+  packages/system:
+    dependencies:
+      '@radix-ui/colors':
+        specifier: ^2.0.1
+        version: 2.0.1
+    devDependencies:
+      '@types/node':
+        specifier: ^17.0.12
+        version: 17.0.45
+      tailwindcss:
+        specifier: ^3.3.3
+        version: 3.3.3
+      tsconfig:
+        specifier: workspace:*
+        version: link:../tsconfig
+      typescript:
+        specifier: ^5.1.6
+        version: 5.1.6
+
   packages/tsconfig: {}
 
   packages/ui:
     dependencies:
+      '@entry/system':
+        specifier: workspace:*
+        version: link:../system
       '@radix-ui/react-slot':
         specifier: ^1.0.2
         version: 1.0.2(@types/react@18.2.20)(react@18.2.0)
@@ -233,7 +255,7 @@ packages:
     engines: {node: '>=6.0.0'}
     dependencies:
       '@jridgewell/gen-mapping': 0.3.3
-      '@jridgewell/trace-mapping': 0.3.9
+      '@jridgewell/trace-mapping': 0.3.19
     dev: true
 
   /@aw-web-design/x-default-browser@1.4.126:
@@ -2191,6 +2213,10 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
+
+  /@radix-ui/colors@2.0.1:
+    resolution: {integrity: sha512-EhWky2oSIf5y+BDfrAY+Rykrkh7m2/M/bgCVRr3M+Hnr4JOh+mtFZLHUS1j/WzaPw1uvd0vwhK3cbxsR0QnCgw==}
+    dev: false
 
   /@radix-ui/number@1.0.1:
     resolution: {integrity: sha512-T5gIdVO2mmPW3NNhjNgEP3cqMXjXL9UbO0BzWcXfvdBs+BohbQxvd/K5hSVKmn9/lbTdsQVKbUcP5WLCwvUbBg==}

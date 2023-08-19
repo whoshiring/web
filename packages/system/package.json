@@ -1,0 +1,36 @@
+{
+  "name": "@entry/system",
+  "version": "0.0.2",
+  "description": "",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "tokens"
+  ],
+  "exports": {
+    ".": "./dist/index.js",
+    "./tokens.css": "./tokens/tokens.core.css"
+  },
+  "scripts": {
+    "build": "tsup lib/index.ts --format cjs --dts",
+    "dev": "tsup lib/index.ts --format cjs --watch --dts",
+    "lint": "eslint \"lib/**/*.ts*\"",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
+  },
+  "keywords": [],
+  "author": "George Bockari <bitwhys@cr8iv.io>",
+  "license": "MIT",
+  "peerDependencies": {
+    "tailwindcss": ">=3.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.12",
+    "tailwindcss": "^3.3.3",
+    "tsconfig": "workspace:*",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "@radix-ui/colors": "^2.0.1"
+  }
+}
