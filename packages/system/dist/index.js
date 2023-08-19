@@ -35,9 +35,38 @@ __export(lib_exports, {
 module.exports = __toCommonJS(lib_exports);
 var import_plugin = __toESM(require("tailwindcss/plugin"));
 
+// utils/index.ts
+var defaultOptions = {
+  neutralColor: "slate",
+  accentColor: "blue",
+  destructiveColor: "red",
+  scaling: "1",
+  radius: "1",
+  overlayColor: "white",
+  withRadixThemes: false
+};
+var getRadixVariableObject = (prefix, fromPalette) => {
+  return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].reduce((scaleObject, scale) => {
+    scaleObject[`${prefix}-${scale}`] = `var(--${fromPalette}-${scale})`;
+    scaleObject[`${prefix}-a${scale}`] = `var(--${fromPalette}-a${scale})`;
+    return scaleObject;
+  }, {});
+};
+
 // lib/plugin.core.ts
 var createPluginWithOptions = (options = {}) => {
   return function createPlugin({ addBase, addUtilities }) {
+    var _a, _b, _c, _d, _e;
+    addBase({
+      ":root": {
+        ...getRadixVariableObject("--neutral-color", (_a = options.neutralColor) != null ? _a : defaultOptions.neutralColor),
+        ...getRadixVariableObject("--accent-color", (_b = options.accentColor) != null ? _b : defaultOptions.accentColor),
+        ...getRadixVariableObject("--destructive-color", (_c = options.destructiveColor) != null ? _c : defaultOptions.destructiveColor),
+        ...getRadixVariableObject("--overlay-color", "white"),
+        "--scaling": (_d = options.scaling) != null ? _d : defaultOptions.scaling,
+        "--radius-factor": (_e = options.radius) != null ? _e : defaultOptions.radius
+      }
+    });
   };
 };
 
@@ -58,44 +87,47 @@ var extendUserTheme = (options = {}) => {
       },
       extend: {
         colors: {
-          border: "hsl(var(--border))",
-          input: "hsl(var(--input))",
-          ring: "hsl(var(--ring))",
-          background: "hsl(var(--background))",
-          foreground: "hsl(var(--foreground))",
+          border: "var(--border)",
+          input: "var(--input)",
+          ring: "var(--ring)",
+          background: "var(--background)",
+          foreground: "var(--foreground)",
           primary: {
-            DEFAULT: "hsl(var(--primary))",
-            foreground: "hsl(var(--primary-foreground))"
+            DEFAULT: "var(--primary)",
+            foreground: "var(--primary-foreground)"
           },
           secondary: {
-            DEFAULT: "hsl(var(--secondary))",
-            foreground: "hsl(var(--secondary-foreground))"
+            DEFAULT: "var(--secondary)",
+            foreground: "var(--secondary-foreground)"
           },
-          destructive: {
-            DEFAULT: "hsl(var(--destructive))",
-            foreground: "hsl(var(--destructive-foreground))"
-          },
+          // destructive: {
+          //   DEFAULT: "var(--destructive)",
+          //   foreground: "var(--destructive-foreground)",
+          // },
           muted: {
-            DEFAULT: "hsl(var(--muted))",
-            foreground: "hsl(var(--muted-foreground))"
+            DEFAULT: "var(--muted)",
+            foreground: "var(--muted-foreground)"
           },
           accent: {
-            DEFAULT: "hsl(var(--accent))",
-            foreground: "hsl(var(--accent-foreground))"
+            DEFAULT: "var(--accent)",
+            foreground: "var(--accent-foreground)"
           },
           popover: {
-            DEFAULT: "hsl(var(--popover))",
-            foreground: "hsl(var(--popover-foreground))"
+            DEFAULT: "var(--popover)",
+            foreground: "var(--popover-foreground)"
           },
           card: {
-            DEFAULT: "hsl(var(--card))",
-            foreground: "hsl(var(--card-foreground))"
+            DEFAULT: "var(--card)",
+            foreground: "var(--card-foreground)"
           }
         },
         borderRadius: {
-          lg: `var(--radius)`,
-          md: `calc(var(--radius) - 2px)`,
-          sm: "calc(var(--radius) - 4px)"
+          "3xl": "var(--radius-6)",
+          "2xl": "var(--radius-5)",
+          xl: "var(--radius-4)",
+          lg: "var(--radius-3)",
+          md: "var(--radius-2)",
+          sm: "var(--radius-1)"
         },
         fontFamily: {
           sans: ["var(--font-sans)", ...import_defaultTheme.fontFamily.sans]
